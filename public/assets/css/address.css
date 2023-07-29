@@ -1,0 +1,133 @@
+.address {
+    height: 118px;
+    padding-left: 4%;
+    padding-right: 4%;
+    position: relative;
+    margin-top: 14px;
+    background-color: #fff;
+    padding-top: 9px;
+    box-sizing: border-box
+}
+
+.address h1 {
+    font-size: 14px;
+    line-height: 21px;
+    color: #191919;
+}
+
+.address h2 {
+    font-size: 14px;
+    color: #65646b;
+}
+
+.address h3 {
+    font-size: 14px;
+    line-height: 18px;
+    color: #b2bab8;
+}
+
+.address p {
+    line-height: 41px;
+    position: absolute;
+    right: 4%;
+    top: 0;
+    background-size: 13px 13px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+
+.delete {
+    width: 20%;
+    height: 74px;
+    line-height: 74px;
+    background-color: #c40000;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0
+}
+
+/*column输入栏、选择栏等*/
+.column_box {
+    height: 46px;
+    line-height: 46px;
+    background-color: #fff;
+    padding-left: 4%;
+    padding-right: 4%;
+    position: relative
+}
+
+.column_img {
+    float: left;
+    margin-top: 14px;
+}
+
+.column_img img {
+    width: 18px;
+    height: auto
+}
+
+.column_box p {
+    line-height: 46px;
+    color: #65646b;
+    font-size: 14px;
+    float: left;
+    margin-left: 12px;
+}
+
+.column_box input {
+    height: 46px;
+    color: #191919;
+    font-size: 14px;
+    float: left;
+    margin-left: 12px;
+    width: 80%;
+}
+
+.next {
+    float: right;
+    margin-top: 16px;
+}
+
+.next img {
+    width: 9px;
+    height: auto
+}
+
+/*confirm底部确认按钮*/
+.confirm_box {
+    width: 100%;
+    height: 61px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    line-height: 61px;
+    text-align: center;
+    font-size: 16px;
+    color: #65646b;
+}
+
+.confirm {
+    background-color: #999;
+    color: white;
+    border-radius: 3px;
+    width: 92%;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+    font-size: 16px;
+    margin-left: 4%;
+    margin-top: 14px;
+}
+
+/*地址输入框*/
+.column_box input {
+    line-height: 46px;
+    color: #191919;
+    font-size: 14px;
+    float: left;
+    margin-left: 12px;
+}

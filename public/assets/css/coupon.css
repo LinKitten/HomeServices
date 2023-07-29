@@ -1,0 +1,24 @@
+.coupon {
+    width: 100%;
+    height: 105px;
+    background: #fff;
+    position: relative;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.coupon h3 {
+    font-size: 16px;
+    color: #000000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.coupon h3 span {
+    color: #fe3360;
+    float: right;
+}
+
+.coupon p {
+    color: rgb(146, 144, 144);
+}

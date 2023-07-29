@@ -1,0 +1,180 @@
+/*阿姨信息*/
+.waiter_box{ height:74px; background-color:#fff; position:relative}
+.waiter_img{ height:46px; width:46px; border:1px solid #d3d3d3; float:left; margin-left:4%; margin-top:14px; border-radius:50%; overflow:hidden; box-sizing:border-box}
+.waiter_img img{ height:46px; width:46px;}
+.waiter{ float:left; margin-left:13px; margin-top:10px;}
+.waiter h1{ line-height:19px; font-size:14px; color:#191919;}
+.waiter h2{ line-height:17px; font-size:12px; color:#65646b; position:relative}
+.waiter p{ line-height:17px; font-size:12px; color:#65646b;}
+.waiter_id{ line-height:40px; color:#65646b; font-size:12px; position:absolute; right:4%; top:0;}
+.collect{ width:32px; height:32px; position:absolute;bottom:11px; right:4%;}
+.collect img{ width:32px; height:auto;}
+.star_box{ margin-top:6px; float:left}
+.star_box img{ float:left; margin-left:4px; width:16px; height:auto}
+
+
+/*服务态度、服务质量*/
+.evaluate {
+    height: 72px;
+    background-color: #fff;
+    position: relative;
+    margin-top: 14px;
+    padding-left: 4%;
+    padding-top: 8px;
+    box-sizing: border-box
+}
+
+.evaluate p {
+    line-height: 27px;
+    color: #65646b;
+    font-size: 14px;
+    float: left
+}
+
+/*文字评价*/
+.say_more {
+    height: 160px;
+    position: relative;
+    margin-top: 14px;
+    background-color: #fff;
+}
+
+textarea {
+    height: 160px;
+    width: 100%;
+    line-height: 22px;
+    color: #191919;
+}
+
+/*评价成功*/
+.success {
+    margin-top: 46px;
+}
+
+.success h1 {
+    text-align: center;
+    font-size: 16px;
+    line-height: 28px;
+    color: #191919;
+}
+
+.success h2 {
+    text-align: center;
+    font-size: 12px;
+    line-height: 27px;
+    color: #65646b;
+}
+
+/*分享框*/
+.black {
+    z-index: 3
+}
+
+.share_box {
+    width: 100%;
+    height: 126px;
+    background-color: #fff;
+    position: fixed;
+    left: 0;
+    bottom: -140px;
+    z-index: 4
+}
+
+.share_title {
+    position: relative;
+    height: 41px;
+    line-height: 41px;
+    color: #65646b;
+    text-align: center;
+    font-size: 14px;
+}
+
+.share_title img {
+    width: 9px;
+    height: 9px;
+    position: absolute;
+    left: 4%;
+    top: 14px;
+}
+
+.share,
+.share1 {
+    width: 50%;
+    float: left
+}
+
+.share img,
+.share1 img {
+    margin-top: 15px;
+    width: 33px;
+    height: auto
+}
+
+.share img {
+    float: right;
+    margin-right: 22%;
+}
+
+.share1 img {
+    float: left;
+    margin-left: 22%;
+}
+
+.share p,
+.share1 p {
+    position: relative;
+    bottom: 0;
+    font-size: 12px;
+    color: #65646b;
+    line-height: 36px;
+}
+
+.share p {
+    clear: right;
+    text-align: right;
+    right: 22%;
+    margin-right: -5px;
+}
+
+.share1 p {
+    clear: left;
+    text-align: left;
+    left: 22%;
+    margin-left: -2px;
+}
+
+
+/*confirm底部确认按钮*/
+.confirm_box {
+    width: 100%;
+    height: 61px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    line-height: 61px;
+    text-align: center;
+    font-size: 16px;
+    color: #65646b;
+}
+
+.confirm {
+    background-color: #999;
+    color: white;
+    border-radius: 3px;
+    width: 92%;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+    font-size: 16px;
+    margin-left: 4%;
+    margin-top: 14px;
+}
+
+/*地址输入框*/
+.column_box input {
+    line-height: 46px;
+    color: #191919;
+    font-size: 14px;
+    float: left;
+    margin-left: 12px;
+}
