@@ -137,6 +137,6 @@ input[type="submit"] {
 .cart {
     width: 90%;
     margin: 10px auto;
-    border-radius: 20px;
-    box-shadow: 5px 3px 6px 10px #f3f3f3aa;
+    /* border-radius: 20px;
+    box-shadow: 5px 3px 6px 10px #f3f3f3aa; */
 }

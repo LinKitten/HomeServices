@@ -7,10 +7,10 @@ const Index = () => {
     // 初始化navigate
     let navigate = React.$Router.useNavigate();
     // 获取cookie上的用户信息
-    var business = React.$Cookies.load("business") ? React.$Cookies.load("business") : {}
+    var cookie = React.$Cookies.load("business") ? React.$Cookies.load("business") : {}
 
     // 设置状态数据
-    var [business, SetBusiness] = React.useState(business)
+    var [business, SetBusiness] = React.useState(cookie)
 
     // 退出登录
     let logout = () => {

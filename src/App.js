@@ -3,6 +3,8 @@ import './App.css';
 // 引入路由
 import { BrowserRouter, Routes, Route, Outlet, NavLink } from 'react-router-dom'
 
+// 用于验证是否登录
+import AuthRouter from './auth';
 
 // 引入
 import Home from '@/components/Home';
@@ -11,6 +13,7 @@ import BusinessProfile from '@/components/business/Profile';
 import Register from '@/components/Register';
 import Login from '@/components/Login';
 import Order from '@/components/order/Order';
+import Info from '@/components/Info';
 
 function App() {
   return (
@@ -23,8 +26,8 @@ function App() {
           <Route path="/" element={<Outlet />}>
 
             <Route path="business" element={<Outlet />}>
-              <Route path="index" element={<BusinessIndex />}></Route>
-              <Route path="profile" element={<BusinessProfile />}></Route>
+              <Route path="index" element={<AuthRouter auth={true} component={<BusinessIndex />}/>}></Route>
+              <Route path="profile" element={<AuthRouter auth={true} component={<BusinessProfile />}/>}></Route>
             </Route>
 
             <Route path="order" element={<Outlet />}>
@@ -37,6 +40,7 @@ function App() {
 
 
 
+          <Route path="/info" element={<Info />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/login" element={<Login />}></Route>
 
