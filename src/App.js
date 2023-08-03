@@ -13,7 +13,7 @@ import BusinessProfile from '@/components/business/Profile';
 import Register from '@/components/Register';
 import Login from '@/components/Login';
 import Order from '@/components/order/Order';
-import Info from '@/components/Info';
+import Info from '@/components/project/Info';
 
 function App() {
   return (
@@ -36,11 +36,23 @@ function App() {
 
 
           </Route>
+    
+          <Route path="/" element={<Outlet />}>
+            <Route path="project" element={<Outlet />}>
+              <Route path="info" element={<Info />}></Route>
+            </Route>
+          </Route>
+
+          <Route path="/" element={<Outlet />}>
+            <Route path="order" element={<Outlet />}>
+              <Route path="order" element={<Order />}></Route>
+            </Route>
+          </Route>
 
 
 
 
-          <Route path="/info" element={<Info />}></Route>
+
           <Route path="/register" element={<Register />}></Route>
           <Route path="/login" element={<Login />}></Route>
 

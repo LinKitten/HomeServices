@@ -79,5 +79,6 @@ yarn add react-router-dom -S
 yarn add react-vant -S
 import * as vant from 'react-vant'
 
-//将UI框架自定义属性挂载到全局上 我们自己加的步骤，官网没有这个操作
+## 将UI框架自定义属性挂载到全局上 
+ 我们自己加的步骤，官网没有这个操作
 React.$vant = vant
