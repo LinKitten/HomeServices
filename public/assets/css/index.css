@@ -78,3 +78,18 @@
 .project .info .time{
     color:#3c3e41;
 }
+
+.rv-list .item{
+    width: 100%;
+    /* box-shadow: 7px 8px 5px 0px #e3dddd; */
+
+}
+.cardimg img{
+    width: 100%;
+}
+
+.proprice{
+    text-align: left;
+    font-size: larger;
+    color: orangered;
+}

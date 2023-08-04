@@ -129,3 +129,146 @@
 .nav_box .current_nav {
     color: #fe3360;
 }
+
+/* 优惠券 */
+
+
+.coupon {
+    height: 133px;
+    width: 95%;
+    margin: 4px auto;
+    border-radius: 5px;
+    position: relative;
+    background: linear-gradient(to right, #f37b1dc4  75%, #fff 75%);
+    margin-bottom: 14px;
+    box-shadow: 7px 8px 5px 0px #e3dddd;
+}
+
+.coupon_title {
+    line-height: 40px;
+    color: #fff;
+    padding-left: 4%;
+    font-size: 16px;
+}
+
+.coupon_text {
+    width: 92%;
+    margin-left: 4%;
+    position: relative;
+    height: 53px;
+    padding-top: 5px;
+    box-sizing: border-box
+}
+.coupon .btn{
+    min-width: 70px;
+    float: right;
+    margin-right: 4%;
+
+
+}
+
+.coupon_text h1,
+.coupon_text h2 {
+    line-height: 20px;
+    color: #e70023;
+    font-size: 14px;
+}
+
+.coupon_text p {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* line-height: 53px; */
+    color: #65646b;
+    font-size: 26px;
+    color: #fe3360;
+}
+.coupon .coupon_if{
+    float: left;
+    margin: 10px 0px 0px 4%;
+    font-size: xx-small;
+    color: #020202;
+}
+
+
+
+.project{
+    width:95%;
+    margin:0 auto;
+    padding:10px 0px;
+    overflow: hidden;
+}
+
+.project .item{
+    width:100%;
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom:10px;
+    margin-bottom:10px;
+    border-bottom: 1px solid #e8e9ea;
+}
+
+.project .item .thumb{
+    width:30%;
+    flex-shrink: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right:10px;
+}
+
+.project .item .thumb img{
+    width:100%;
+    height: 100%;
+}
+
+.project .item .info{
+    width:65%;
+}
+
+.project .item .info .title{
+    font-size:1.1em;
+    font-weight: 500;
+    margin-bottom:5px;
+}
+
+.project .taglist{
+    display: flex;
+    width:100%;
+    margin-bottom:5px;
+}
+
+.project .taglist .tag{
+    color: rgb(14, 34, 133);
+    background-color: rgb(235, 236, 243);
+    border-color: rgb(155, 162, 195);
+    border: 1px solid #a0cfff;
+    border-radius: 50px;
+    font-size:.5em;
+    margin-right: 5px;
+    padding:0px 5px;
+    font-weight: 450;
+}
+
+.project .limit{
+    display: flex;
+    width:100%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    margin-bottom:5px;
+}
+
+.project .limit .price{
+    color:#ef022e;
+    font-size:1.1em;
+    font-weight: 500;
+}
+
+.project .limit .max{
+    color:#3c3e41;
+}
+
+.project .info .time{
+    color:#3c3e41;
+}

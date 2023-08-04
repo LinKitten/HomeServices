@@ -57,7 +57,7 @@ const Login = () => {
             message:result.msg,
             onClose:()=>{
                 //保存用户信息到cookie
-                React.$Cookies.save("business",result.data)
+                React.$Cookies.save("business",result.data,{path: '/'})
                 // 跳转到我的页面bsiness/index
                 navigate(result.url)
             }

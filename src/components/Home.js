@@ -32,7 +32,7 @@ const Home = () => {
     }
     // 加载数据
     const ProjectLoad = async () => {
-        // 组装数据
+        // 组装数据 
         var data = {
             status: active,
             page: page
@@ -46,7 +46,7 @@ const Home = () => {
         if (result.code == 0) {
             // 设置加载完成
             SetFinished(true)
-            React.$Vant.Toast.fail(result.msg)
+            // React.$Vant.Toast.fail(result.msg)
             return false
         }
 
@@ -89,8 +89,10 @@ const Home = () => {
 
             {/* banner */}
             <div className="banner_box swiper-container">
-                <div id="banner" className="swiper-wrapper">
-                    <div className="swiper-slide"><img src="/assets/images/banner.png" /></div>
+                <div id="banner" className="swiper-wrapper" >
+                    <React.$Router.NavLink to={"/coupon"} className="swiper-slide">
+                        <img src="/assets/images/banner.png" />
+                    </React.$Router.NavLink>
                 </div>
                 <div className="swiper-pagination"></div>
             </div>
@@ -102,28 +104,46 @@ const Home = () => {
                 ))}
             </React.$Vant.Tabs>
 
-                {/* 活动列表 */}
+            {/* 活动列表 */}
             <div className="project">
                 {/*  列表上拉加载+下拉刷新 */}
                 <React.$Vant.PullRefresh onRefresh={onRefresh}>
                     <React.$Vant.List finished={finished} onLoad={ProjectLoad}>
                         {list.map((item, key) => (
-                            <React.$Router.NavLink to="/project/info"  state={{id:item.id}}  className="item" key={key}>
-                                <div className="thumb">
-                                    <img src={item.thumb_text} />
-                                </div>
-                                <div className="info">
-                                    <div className="title">{item.title}</div>
-                                    <div className="taglist">
-                                        <div className="tag">{item.status_text}</div>
-                                        <div className="tag">已有 {item.count_text} 人参与</div>
-                                    </div>
-                                    <div className="limit">
-                                        <div className="price">￥{item.price}</div>
-                                        <div className="max">{item.nums == 0 ? '不限' : item.nums}人数</div>
-                                    </div>
-                                    <div className="time">{item.createtime_text}</div>
-                                </div>
+                            <React.$Router.NavLink to="/project/info" state={{ id: item.id }} className="item" key={key}>
+                                <React.$Vant.Card round>
+                                    <React.$Vant.Card.Header>{item.title}</React.$Vant.Card.Header>
+                                    <React.$Vant.Card.Body>
+
+                                        <React.$Vant.Space direction="vertical">
+                                            <div className='cardimg'>
+                                                <img src={item.thumb_text} />
+                                            </div>
+                                            <React.$Vant.Flex justify='center' align='center'>
+                                                <React.$Vant.Flex.Item span={8} >已有 {item.count_text} 人参与</React.$Vant.Flex.Item>
+                                                <React.$Vant.Flex.Item span={4}></React.$Vant.Flex.Item>
+                                                <React.$Vant.Flex.Item span={12}>活动参与人数：{item.nums == 0 ? '不限' : item.nums}人数</React.$Vant.Flex.Item>
+                                            </React.$Vant.Flex>
+
+                                        </React.$Vant.Space>
+
+
+                                    </React.$Vant.Card.Body>
+                                    <React.$Vant.Card.Footer>
+
+                                        <React.$Vant.Flex justify='center' align='center'>
+                                            <React.$Vant.Flex.Item span={8} className="proprice">￥{item.price}</React.$Vant.Flex.Item>
+                                            <React.$Vant.Flex.Item span={8}></React.$Vant.Flex.Item>
+                                            <React.$Vant.Flex.Item span={8}>
+                                                <React.$Vant.Button round size='small' plain  type='primary'>
+                                                    {item.status_text}
+                                                </React.$Vant.Button>
+                                            </React.$Vant.Flex.Item>
+                                        </React.$Vant.Flex>
+                                    </React.$Vant.Card.Footer>
+                                </React.$Vant.Card>
+
+
                             </React.$Router.NavLink>
 
                         ))}
@@ -133,10 +153,10 @@ const Home = () => {
                 </React.$Vant.PullRefresh>
 
 
-            </div>
+            </div >
 
             {/* 底部菜单 */}
-            <Menu />
+            < Menu />
         </>
     )
 }

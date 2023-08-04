@@ -1,9 +1,17 @@
 import React from 'react';
+
+
+// 城市地区的数据
+import RegionData from '@/services/region.js'
+
+
+
 const Profile = () => {
     // 初始化navigate
     let navigate = React.$Router.useNavigate();
     // 实例化表单对象
     const [form] = React.$Vant.Form.useForm()
+
 
     // 获取cookie上的用户信息
     var cookie = React.$Cookies.load("business") ? React.$Cookies.load("business") : {}
@@ -33,6 +41,28 @@ const Profile = () => {
         { text: '男', value: "1" },
         { text: '女', value: "2" },
     ]
+
+    // 获取最深地区码
+
+    var code = []
+
+    if (cookie.province) {
+        code.push(cookie.province)
+    }
+
+    if (cookie.city) {
+        code.push(cookie.city)
+    }
+
+    if (cookie.district) {
+        code.push(cookie.district)
+    }
+
+    console.log(code);
+
+    // 地区
+    const [region, SetRegion] = React.useState(code);
+
 
     const rules = {
         mobile: [
@@ -107,6 +137,12 @@ const Profile = () => {
         if (values.password) {
             data.password = values.password
         }
+        //判断地区的数据是否为空
+        if (region) {
+            //获取数组中最后一个元素 追加数据
+            data.region = region[region.length - 1]
+        }
+
         // 如果有文件上传就追加头像字段
         if (values.avatar_text[0].file) {
             data.avatar = values.avatar_text[0].file;
@@ -127,8 +163,7 @@ const Profile = () => {
             message: result.msg,
             onClose: () => {
                 //保存最新的用户信息cookie
-                React.$Cookies.save("business", result.data)
-
+                React.$Cookies.save("business", result.data, { path: '/' })
                 navigate(-1)
             }
         })
@@ -217,6 +252,26 @@ const Profile = () => {
                         />
                     </React.$Vant.Popup>
 
+                    {/* 所在地区 */}
+                    <React.$Vant.Form.Item  label='地区' isLink>
+                        <React.$Vant.Cascader
+                            popup={{ round: true }}
+                            value={region}
+                            onFinish={SetRegion}
+                            title='请选择所在地区'
+                            options={RegionData}
+                        >
+                            {(_, selectedRows, actions) => (
+                                <React.$Vant.Input
+                                    value={selectedRows.map(el => el.text).join('-')}
+                                    readOnly
+                                    placeholder='请选择所在地区'
+                                    onClick={() => actions.open()}
+                                />
+                            )}
+                        </React.$Vant.Cascader>
+                    </React.$Vant.Form.Item>
+
                     {/* 头像上传 */}
                     <React.$Vant.Form.Item
                         name='avatar_text'
@@ -227,7 +282,7 @@ const Profile = () => {
 
                 </React.$Vant.Form>
             </div>
-  
+
 
 
 
