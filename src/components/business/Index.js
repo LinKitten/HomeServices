@@ -47,13 +47,13 @@ const Index = () => {
                 </li>
                 <li>
                     <a>
-                        <h2>50</h2>
+                        <h2>{business.order_count}</h2>
                         <p>订单</p>
                     </a>
                 </li>
                 <li>
                     <a>
-                        <h2>2</h2>
+                        <h2>{business.receive_count}</h2>
                         <p>优惠券</p>
                     </a>
                 </li>
@@ -78,20 +78,8 @@ const Index = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/">
+                    <NavLink to="/business/coupon">
                         <span>优惠券</span>
-                        <i className="am-icon-angle-right"></i>
-                    </NavLink>
-                </li>
-                <li>
-                    <a href="tel:123456">
-                        <span>在线客服</span>
-                        <i className="am-icon-angle-right"></i>
-                    </a>
-                </li>
-                <li>
-                    <NavLink to="/">
-                        <span>邀请分享</span>
                         <i className="am-icon-angle-right"></i>
                     </NavLink>
                 </li>

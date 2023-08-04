@@ -14,6 +14,8 @@ const Info = () => {
 
     // 保存原来价格
     const [initialprice, SetInitialprice] = React.useState(0);
+    // 默认没有预约活动
+    const [isReser, SetIsReser] = React.useState(false);
 
     //获取cookie信息
     var cookie = React.$Cookies.load('business') ? React.$Cookies.load('business') : {}
@@ -101,6 +103,30 @@ const Info = () => {
 
     }
 
+    // 查询是否有预约过活动
+    const check = async () => {
+        var result = await React.$HTTP.POST({
+            url: '/project/order/check',
+            params: {
+                pid: id,//活动id
+                busid: business.id
+            }
+        })
+        console.log(result);
+
+        if (result.code == 0) {
+            // 未预约
+            SetIsReser(false);
+            return false
+        } else {
+            //已经预约
+            SetIsReser(true);
+            return false;
+        }
+
+    }
+
+
     // 根据活动状态展示不同的倒计时内容
     const CountDown = () => {
         if (down > 0) {
@@ -140,14 +166,14 @@ const Info = () => {
             React.$Vant.Toast.fail(result.msg)
             return false
         }
-        console.log(project);
-        console.log(result.data);
+        // console.log(project);
+        // console.log(result.data);
 
         // 将数据组装优惠券组件需要的数据结构
         var usable = [];//可以使用的数据
         var unusable = [];//不可以使用的数据
 
-        result.data.forEach((item,key) => {
+        result.data.forEach((item, key) => {
             // 计算折扣金额
             var update = parseFloat(project.price) * parseFloat(item.coupon.discount)
             update = parseFloat((project.price - update) * 100);
@@ -236,11 +262,17 @@ const Info = () => {
             })
 
     }
-    // Hook钩子调用
 
+    // 提示
+    const show = () => {
+
+    }
+
+    // Hook钩子调用
     React.useEffect(() => {
 
         InfoLoad()// eslint-disable-next-line
+        check();// eslint-disable-next-line
     }, [])
 
     // 根据活动状态显示不同的按钮
@@ -252,7 +284,8 @@ const Info = () => {
                 </div>
             )
         }
-        if (info.status == "1") {
+        // 没有预约
+        if (info.status == "1" && !isReser) {
             return (
 
                 <div className="am-navbar gm-foot am-no-layout footer">
@@ -276,6 +309,15 @@ const Info = () => {
                         />
                     </React.$Vant.Popup>
                     <a className="button" onClick={submit} >立即预约</a>
+                </div>
+            )
+        }
+        // 已经预约
+        if (info.status == "1" && isReser) {
+            return (
+
+                <div className="am-navbar gm-foot am-no-layout footer">
+                    <a className="button dis" onClick={show} >已经预约本活动</a>
                 </div>
             )
         }
